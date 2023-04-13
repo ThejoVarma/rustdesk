@@ -134,7 +134,7 @@ class _DesktopSettingPageState extends State<DesktopSettingPage>
                       _Safety(),
                       _Network(),
                       _Display(),
-                      _Account(),
+                      //_Account(),
                       _About(),
                     ],
                   )),
@@ -241,7 +241,7 @@ class _GeneralState extends State<_General> {
             hwcodec(),
             audio(context),
             record(context),
-            _Card(title: 'Language', children: [language()]),
+            //_Card(title: 'Language', children: [language()]),
             other()
           ],
         ).marginOnly(bottom: _kListViewBottomMargin));
@@ -926,10 +926,10 @@ class _NetworkState extends State<_Network> with AutomaticKeepAliveClientMixin {
                 absorbing: locked,
                 child: Column(children: [
                   server(enabled),
-                  _Card(title: 'Proxy', children: [
-                    _Button('Socks5 Proxy', changeSocks5Proxy,
-                        enabled: enabled),
-                  ]),
+                  // _Card(title: 'Proxy', children: [
+                  //   _Button('Socks5 Proxy', changeSocks5Proxy,
+                  //       enabled: enabled),
+                  // ]),
                 ]),
               ),
             ]).marginOnly(bottom: _kListViewBottomMargin));
@@ -1382,6 +1382,17 @@ class _About extends StatefulWidget {
 
   @override
   State<_About> createState() => _AboutState();
+}
+
+class _AboutGetRytRemote extends StatefulWidget {
+  const _AboutGetRytRemote({Key? key}) : super(key: key);
+
+  @override
+  State<_AboutGetRytRemote> createState() => _AboutGetRytRemoteState();
+}
+
+class _AboutGetRytRemoteState extends State<_AboutGetRytRemote> {
+
 }
 
 class _AboutState extends State<_About> {
