@@ -12,7 +12,7 @@
 
 typedef char** (*FUNC_RUSTDESK_CORE_MAIN)(int*);
 typedef void (*FUNC_RUSTDESK_FREE_ARGS)( char**, int);
-const char* uniLinksPrefix = "rustdesk://";
+const char* uniLinksPrefix = "getrytremote://";
 /// Note: `--server`, `--service` are already handled in [core_main.rs].
 const std::vector<std::string> parameters_white_list = {"--install", "--cm"};
 
@@ -108,7 +108,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   Win32Window::Point origin(10, 10);
   Win32Window::Size size(800, 600);
   if (!window.CreateAndShow(
-          is_cm_page ? L"RustDesk - Connection Manager" : L"RustDesk", origin,
+          is_cm_page ? L"GetRytRemote - Connection Manager" : L"GetRytRemote", origin,
           size, !is_cm_page)) {
       return EXIT_FAILURE;
   }
