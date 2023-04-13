@@ -435,9 +435,9 @@ class _GeneralState extends State<_General> {
 }
 
 enum _AccessMode {
-  //custom,
+  custom,
   full,
-  //view,
+  view,
   deny,
 }
 
@@ -503,27 +503,27 @@ class _SafetyState extends State<_Safety> with AutomaticKeepAliveClientMixin {
         if (accessMode == 'full') {
           mode = _AccessMode.full;
         } 
-        // else if (accessMode == 'view') {
-        //   mode = _AccessMode.view;
-        // } else {
-        //   mode = _AccessMode.custom;
-        // }
+        else if (accessMode == 'view') {
+          mode = _AccessMode.view;
+        } else {
+          mode = _AccessMode.custom;
+        }
       }
       String initialKey;
       bool? fakeValue;
       switch (mode) {
-        // case _AccessMode.custom:
-        //   initialKey = '';
-        //   fakeValue = null;
-        //   break;
+        case _AccessMode.custom:
+          initialKey = '';
+          fakeValue = null;
+          break;
         case _AccessMode.full:
           initialKey = 'full';
           fakeValue = true;
           break;
-        // case _AccessMode.view:
-        //   initialKey = 'view';
-        //   fakeValue = false;
-        //   break;
+        case _AccessMode.view:
+          initialKey = 'view';
+          fakeValue = false;
+          break;
         case _AccessMode.deny:
           initialKey = 'deny';
           fakeValue = false;
@@ -533,15 +533,15 @@ class _SafetyState extends State<_Safety> with AutomaticKeepAliveClientMixin {
       return _Card(title: 'Permissions', children: [
         _ComboBox(
             keys: [
-              //'',
+              '',
               'full',
-              //'view',
+              'view',
               'deny'
             ],
             values: [
-              //translate('Custom'),
+              translate('Custom'),
               translate('Full Access'),
-              //translate('Screen Share'),
+              translate('Screen Share'),
               translate('Deny remote access'),
             ],
             enabled: enabled,
