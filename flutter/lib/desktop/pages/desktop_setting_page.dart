@@ -77,7 +77,7 @@ class _DesktopSettingPageState extends State<DesktopSettingPage>
         Icons.enhanced_encryption),
     _TabInfo('Network', Icons.link_outlined, Icons.link),
     _TabInfo('Display', Icons.desktop_windows_outlined, Icons.desktop_windows),
-    _TabInfo('Account', Icons.person_outline, Icons.person),
+    //_TabInfo('Account', Icons.person_outline, Icons.person),
     _TabInfo('About', Icons.info_outline, Icons.info)
   ];
 
@@ -435,9 +435,9 @@ class _GeneralState extends State<_General> {
 }
 
 enum _AccessMode {
-  custom,
+  //custom,
   full,
-  view,
+  //view,
   deny,
 }
 
@@ -502,27 +502,28 @@ class _SafetyState extends State<_Safety> with AutomaticKeepAliveClientMixin {
       } else {
         if (accessMode == 'full') {
           mode = _AccessMode.full;
-        } else if (accessMode == 'view') {
-          mode = _AccessMode.view;
-        } else {
-          mode = _AccessMode.custom;
-        }
+        } 
+        // else if (accessMode == 'view') {
+        //   mode = _AccessMode.view;
+        // } else {
+        //   mode = _AccessMode.custom;
+        // }
       }
       String initialKey;
       bool? fakeValue;
       switch (mode) {
-        case _AccessMode.custom:
-          initialKey = '';
-          fakeValue = null;
-          break;
+        // case _AccessMode.custom:
+        //   initialKey = '';
+        //   fakeValue = null;
+        //   break;
         case _AccessMode.full:
           initialKey = 'full';
           fakeValue = true;
           break;
-        case _AccessMode.view:
-          initialKey = 'view';
-          fakeValue = false;
-          break;
+        // case _AccessMode.view:
+        //   initialKey = 'view';
+        //   fakeValue = false;
+        //   break;
         case _AccessMode.deny:
           initialKey = 'deny';
           fakeValue = false;
@@ -532,15 +533,15 @@ class _SafetyState extends State<_Safety> with AutomaticKeepAliveClientMixin {
       return _Card(title: 'Permissions', children: [
         _ComboBox(
             keys: [
-              '',
+              //'',
               'full',
-              'view',
+              //'view',
               'deny'
             ],
             values: [
-              translate('Custom'),
+              //translate('Custom'),
               translate('Full Access'),
-              translate('Screen Share'),
+              //translate('Screen Share'),
               translate('Deny remote access'),
             ],
             enabled: enabled,
@@ -1040,7 +1041,7 @@ class _NetworkState extends State<_Network> with AutomaticKeepAliveClientMixin {
 
       export() {
         final text = ServerConfig(
-                idServer: idController.text,
+                idServer: 'remote.getryt.in',
                 relayServer: relayController.text,
                 apiServer: apiController.text,
                 key: keyController.text)
@@ -1402,7 +1403,7 @@ class _AboutState extends State<_About> {
           child: SingleChildScrollView(
             controller: scrollController,
             physics: DraggableNeverScrollableScrollPhysics(),
-            child: _Card(title: '${translate('About')} RustDesk', children: [
+            child: _Card(title: '${translate('About')} GetRytRemote', children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -1417,7 +1418,7 @@ class _AboutState extends State<_About> {
                           .marginSymmetric(vertical: 4.0)),
                   InkWell(
                       onTap: () {
-                        launchUrlString('https://rustdesk.com/privacy');
+                        launchUrlString('https://getryt.io/privacy-policy');
                       },
                       child: Text(
                         translate('Privacy Statement'),
@@ -1425,7 +1426,7 @@ class _AboutState extends State<_About> {
                       ).marginSymmetric(vertical: 4.0)),
                   InkWell(
                       onTap: () {
-                        launchUrlString('https://rustdesk.com');
+                        launchUrlString('https://getryt.io/');
                       },
                       child: Text(
                         translate('Website'),
@@ -1443,7 +1444,7 @@ class _AboutState extends State<_About> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Copyright © 2022 Purslane Ltd.\n$license',
+                                'Copyright © 2023 GetRyt Ltd.\n$license',
                                 style: const TextStyle(color: Colors.white),
                               ),
                               Text(
