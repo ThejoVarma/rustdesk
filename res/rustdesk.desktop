@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.5
-Name=RustDesk
+Name=GetRytRemote
 GenericName=Remote Desktop
 Comment=Remote Desktop
-Exec=rustdesk %u
+Exec=getrytremote %u
 Icon=/usr/share/rustdesk/files/rustdesk.png
 Terminal=false
 Type=Application
@@ -16,4 +16,4 @@ X-Desktop-File-Install-Version=0.23
 
 [Desktop Action new-window]
 Name=Open a New Window
-Exec=rustdesk %u
+Exec=getrytremote %u
