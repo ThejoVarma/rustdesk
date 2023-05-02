@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
 
   void initPages() {
     _pages.clear();
-    _pages.add(ConnectionPage());
+    //_pages.add(ConnectionPage()); //commenting connection page for the android client purpose
     if (isAndroid) {
       _pages.addAll([ChatPage(), ServerPage()]);
     }
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
           // backgroundColor: MyTheme.grayBg,
           appBar: AppBar(
             centerTitle: true,
-            title: Text("RustDesk"),
+            title: Text("GetRytRemote"), // Android Top Bar Title
             actions: _pages.elementAt(_selectedIndex).appBarActions,
           ),
           bottomNavigationBar: BottomNavigationBar(
