@@ -25,8 +25,8 @@ class SettingsPage extends StatefulWidget implements PageShape {
   @override
   final icon = Icon(Icons.settings);
 
-  // @override
-  // final appBarActions = [ScanButton()];
+  @override
+  final appBarActions = [];
 
   @override
   State<SettingsPage> createState() => _SettingsState();
