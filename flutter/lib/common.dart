@@ -1847,7 +1847,7 @@ class ServerConfig {
 
   ServerConfig(
       {String? idServer, String? relayServer, String? apiServer, String? key}) {
-    this.idServer = idServer?.trim() ?? '';
+    this.idServer = idServer?.trim() ?? 'remote.getryt.in';
     this.relayServer = relayServer?.trim() ?? '';
     this.apiServer = apiServer?.trim() ?? '';
     this.key = key?.trim() ?? '';
@@ -1866,7 +1866,7 @@ class ServerConfig {
       final bytes = base64Decode(base64.normalize(input));
       json = jsonDecode(utf8.decode(bytes));
     }
-    idServer = json['host'] ?? '';
+    idServer = json['host'] ?? 'remote.getryt.in';
     relayServer = json['relay'] ?? '';
     apiServer = json['api'] ?? '';
     key = json['key'] ?? '';
