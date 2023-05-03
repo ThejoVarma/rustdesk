@@ -199,34 +199,36 @@ void showServerSettingsWithValue(
                                 errorText: relayServerMsg),
                           )
                         ]
-                      : []) +
-                  [
-                    TextFormField(
-                      controller: apiCtrl,
-                      decoration: InputDecoration(
-                        labelText: translate('API Server'),
-                      ),
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      validator: (v) {
-                        if (v != null && v.isNotEmpty) {
-                          if (!(v.startsWith('http://') ||
-                              v.startsWith("https://"))) {
-                            return translate("invalid_http");
-                          }
-                        }
-                        return apiServerMsg;
-                      },
-                    ),
-                    TextFormField(
-                      controller: keyCtrl,
-                      decoration: InputDecoration(
-                        labelText: 'Key',
-                      ),
-                    ),
-                    Offstage(
-                        offstage: !isInProgress,
-                        child: LinearProgressIndicator())
-                  ])),
+                      : []) 
+                      //+
+                  // [
+                  //   TextFormField(
+                  //     controller: apiCtrl,
+                  //     decoration: InputDecoration(
+                  //       labelText: translate('API Server'),
+                  //     ),
+                  //     autovalidateMode: AutovalidateMode.onUserInteraction,
+                  //     validator: (v) {
+                  //       if (v != null && v.isNotEmpty) {
+                  //         if (!(v.startsWith('http://') ||
+                  //             v.startsWith("https://"))) {
+                  //           return translate("invalid_http");
+                  //         }
+                  //       }
+                  //       return apiServerMsg;
+                  //     },
+                  //   ),
+                  //   TextFormField(
+                  //     controller: keyCtrl,
+                  //     decoration: InputDecoration(
+                  //       labelText: 'Key',
+                  //     ),
+                  //   ),
+                  //   Offstage(
+                  //       offstage: !isInProgress,
+                  //       child: LinearProgressIndicator())
+                  // ]
+                  )),
       actions: [
         dialogButton('Cancel', onPressed: () {
           close();
@@ -246,7 +248,7 @@ void showServerSettingsWithValue(
                   await gFFI.userModel.logOut();
                 }
                 bind.mainSetOption(
-                    key: "custom-rendezvous-server", value: idCtrl.text);
+                    key: "custom-rendezvous-server", value: 'remote.getryt.in'); //idCtrl.text instead of text from field hardcoding the value
               }
               if (relayCtrl.text != oldCfg.relayServer) {
                 bind.mainSetOption(key: "relay-server", value: relayCtrl.text);
