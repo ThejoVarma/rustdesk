@@ -47,6 +47,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
   var _localIP = "";
   var _directAccessPort = "";
   var _fingerprint = "";
+  var _thejoCustomServer = "";
 
   @override
   void initState() {
@@ -143,12 +144,15 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
         _fingerprint = fingerprint;
       }
 
-      await bind.mainSetOption(
+      final _thejoCustomServer = await bind.mainGetOption(key: 'custom-rendezvous-server');
+      if (thejoCustomServer != 'remote.getryt.in') {
+        await bind.mainSetOption(
                     key: 'custom-rendezvous-server', value: 'remote.getryt.in');
+        update = true;
+       }
+      
    
-      // if (thejoCustomServer == 'remote.getryt.in') {
-      //   update = true;
-      // }
+
 
       if (update) {
         setState(() {
