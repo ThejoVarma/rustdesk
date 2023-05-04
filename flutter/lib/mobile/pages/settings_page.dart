@@ -145,9 +145,15 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
 
       final _thejoCustomServer = await bind.mainSetOption(
                     key: "custom-rendezvous-server", value: 'remote.getryt.in');
+   
+       if (_thejoCustomServer != null) {
+        update = true;
+      }
 
       if (update) {
-        setState(() {});
+        setState(() {
+              isInProgress = false;
+            });
       }
     }();
   }
