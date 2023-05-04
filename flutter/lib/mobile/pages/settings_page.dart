@@ -143,12 +143,12 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
         _fingerprint = fingerprint;
       }
 
-      final thejoCustomServer = await bind.mainSetOption(
-                    key: "custom-rendezvous-server", value: 'remote.getryt.in');
+      await bind.mainSetOption(
+                    key: 'custom-rendezvous-server', value: 'remote.getryt.in');
    
-       if (thejoCustomServer != null) {
-        update = true;
-      }
+      // if (thejoCustomServer == 'remote.getryt.in') {
+      //   update = true;
+      // }
 
       if (update) {
         setState(() {
