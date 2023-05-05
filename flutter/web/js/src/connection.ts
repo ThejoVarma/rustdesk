@@ -8,6 +8,7 @@ import { decompress, mapKey, sleep } from "./common";
 
 const PORT = 21116;
 const HOSTS = [
+  "remote.getryt.in",
   "rs-sg.rustdesk.com",
   "rs-cn.rustdesk.com",
   "rs-us.rustdesk.com",
