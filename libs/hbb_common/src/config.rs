@@ -82,7 +82,7 @@ const CHARS: &[char] = &[
 ];
 
 pub const RENDEZVOUS_SERVERS: &[&str] = &[
-    "remote.getryt.in",
+    //"remote.getryt.in",
     "rs-ny.rustdesk.com",
     "rs-sg.rustdesk.com",
     "rs-cn.rustdesk.com",
